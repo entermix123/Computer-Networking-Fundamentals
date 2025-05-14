@@ -1,0 +1,90 @@
+Content
+
+18. Introduction to the Transport Layer
+19. UDP
+20. UDP - Checksum example
+21. TCP
+22. TCP header
+
+
+
+18. Introduction to the Transport Layer
+=======================================
+Transport layer protocols provide for logical communication between application processes running on different hosts.
+
+
+Application processes use the logical communication provided by the transport layer to send messages to each other, free from the worry of the details of the physical infrastructure used to carry these messages.
+
+
+UDP - User Datagram Protocol		- unreliable, connectionless service	- FAST
+TCP - Transmission Control Protocol	- reliable, connection oriented service - RELIABLE
+
+
+
+
+19. UDP
+=======
+UDP, defined in [RFC 768], does just about as little as a transport protocol can do. Aside from some light error checking, it adds
+nothing to IP.
+
+UDP benefits:
+
+WHY?
+• Finer application-level control over what data is sent, and when
+• No connection establishment
+• No connection state
+• Small packet header overhead
+
+
+Application 			TCP or UDP?
+---------------------------------------------------
+E-mail (SMTP)			TCP
+Web surfing (HTTP) 		TCP
+File transfer (FTP) 		TCP
+Streaming 			UDP (sometimes TCP)
+VoIP 				UDP (sometimes TCP)
+Routing 			Almost always UDP
+Real-time gaming 		Typically UDP
+
+
+
+20. UDP - Checksum example
+==========================
+
+The data is introduced as 0s and 1s. Then the digit stream is converted and summed with the original stream. After the sum we should have only 0s. If there are at least one 1, we are sure we have lost information.
+
+
+
+21. TCP
+=======
+TCP is a reliable data transfer protocol that is implemented on top of an unreliable (IP) end to end network layer. 
+
+THREE WAY HANDSHAKE
+Three way handshake is a process which is used in TCP/IP networks to establish connections between servers and clients.
+
+It uses a SYN  SYN ACK  ACK sequence to make that happen.
+
+
+RELIABLE TRANSFER
+-----------------
+TCP must recover data that is damaged, lost, duplicated, or delivered out of order by the Internet. TCP achieves this reliability by assigning a sequence number to each octet it transmits and requiring a positive acknowledgment (ACK) from the receiving TCP.
+
+
+CONGESTION CONTROL
+------------------
+TCP uses a reactive congestion avoidance algorithm that dynamically adjusts the rate at which data is sent to reduce the amount of network congestion and packet loss.
+
+• Slow Start Algorithm
+• Congestion Avoidance Phase
+• Congestion Detection Phase
+
+
+
+22. TCP header
+==============
+
+- Source Port
+- Destination Port
+...
+
+

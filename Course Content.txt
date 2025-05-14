@@ -1,0 +1,76 @@
+Content
+
+Section 2 Computer Networks Introduction
+
+3. What is computer network?
+4. What is internet?
+5. What is protocol?
+6. THE OSI MODEL
+7. OSI Layer - Practical Example
+8. Other Network Models
+9. Computer Networks History
+
+
+Section 3 Application Layer
+
+10. Introduction of the Application Layer
+11. P2P vs. Client-Server
+12. HTTP
+13. HTTPS
+14. FTP
+15. E-mail
+16. DNS
+17. Remote Access
+
+
+Section 4 Transport Layer Notes
+
+10. Introduction of the Application Layer
+11. P2P vs. Client-Server
+12. HTTP
+13. HTTPS
+14. FTP
+15. E-mail
+16. DNS
+17. Remote Access
+
+
+Section 5 Network Layer
+
+23. The Network Layer
+24. The IP Address
+25. Subnetting
+Quiz 1: Which IP is valid?
+26. DHCP
+27. The Ping (ICMP)
+28. NAT
+29. IPv6
+30. Routing
+31. Routing Protocol (IGP vs. EGP)
+
+
+Section 6 Link & Physical
+
+32. Introduction to the Link/Physical Layer
+33. MAC Address
+34. Switching
+35. ARP (Address Resolution Protocol)
+36. ARP Security
+37. VLANs
+38. Ethernet
+
+
+Section 7 Mobile and Wireless Networks
+
+39. Introduction to Mobile and Wireless Networks
+40. Wi-Fi
+41. Cellular networks
+
+
+Section 8 Computer Network Security
+
+42. Introduction of Computer Network Security
+43.Types of threats/attacks
+44. Firewalls
+45. IPS vs. IDS
+

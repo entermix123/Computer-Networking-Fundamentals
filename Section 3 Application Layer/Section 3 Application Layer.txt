@@ -1,0 +1,261 @@
+Content
+=======
+
+10. Introduction of the Application Layer
+11. P2P vs. Client-Server
+12. HTTP
+13. HTTPS
+14. FTP
+15. E-mail
+16. DNS
+17. Remote Access
+
+
+10. Introduction of the Application Layer
+=========================================
+
+OSI Model:
+
+	Layer			Information
+	-----			-----------
+1. L7	Application Layer	Message
+2. L6	Presentation Layer	Message
+3. L5	Session Layer		Message
+4. L4	Transport Layer		Segment
+5. L3	Network Layer		Packet and datagrams
+6. L2	Data Link Layer		Frame
+7. L1	Physical Layer		Bit
+
+
+Application Layer:
+- Ensures an application can effectively communicate with other applications on different computer systems and networks. 
+- It is a components within an application that controls the communication method to other devices. It is an abstraction layer service that masks the rest of the application from the transmission process.
+
+Functions:
+- ensures that the receiving application is defined, reachable and ready to accept data
+- when appropriate, enables authentication between devices for an extra layer of network security
+- defines the types of messages exchanged, for example, request messages and response messages
+- ensures agreement at both ends on error recovery procedures, data integrity and privacy
+- determines protocol and data syntax rules at the application level
+- present the data on the receiving end to the user application
+
+
+Application Layer Protocols
+
+Application			Protocol			Port				Underlying Transport Protocol
+-----------------------------------------------------------------------------------------------------------------------------
+Web				HTTP				80				TCP
+File Tranfer			FTP				20, 21				TCP
+Email				SMTP, POP3, IMAP, HTTP		25/587, 110, 143		TCP
+Remote Access			Telnet				23				TCP
+Internet Telephony		SIR, RTP, Skype			5060, 5061, 16384-32767		UDP or TCP
+
+
+
+
+11. P2P vs. Client-Server
+=========================
+
+12. HTTP
+========
+Hyper Text Transport Protocol defined in RFC1945 and RFC2616
+
+HTTP is implemented in two programs: a client program and a server program. The client program and server program, executing on different end systems, talk to each other by exchanging HTTP mesages.
+HTTP defines the structure of these messages and how the client and the server exchange the messages.
+
+
+A WEB PAGE:
+- A Web page consists if objects
+
+- An object is simply a file - sucha s an HTML file, a JPEG image, a java applet or a video clip
+
+- Most web pages consist of a base HTML file and several referenced objects
+
+- URL (Uniform Resource Locator) is the address of a an unique resource on the Web
+
+
+
+THE URL
+-------
+
+http://www.udemy.com/course_x/test.docx
+      |		    |                  |
+	 hostname        object path
+
+
+HTTP Responses
+20x - OK
+30x - redirect
+40x - request error
+50x - server error
+
+
+
+13. HTTPS
+=========
+
+Hypertext Tranfer Protocol Secure (HTTPS) is an extension of the HTTP.
+
+It is combination of HTTP and SSL (Secure Socket Layer) protocols.
+
+
+SSL and TLS
+-----------
+SSL and TLS are cryptographic protocols that encrypt and authenticate data transfer between servers, systems, applications and users.
+
+TLS is latest and most used. SSL can be seen as naming of the certificates.
+
+
+
+14. FTP
+=======
+
+FTP and HTTP/S both run on top of TCP.
+
+
+FTP uses 2 parralel TCP channels.
+	- control (commands) connection  - credentials, folders paths, etc	: port 21
+	- data connection 		- tranfer only data			: port 20
+
+
+FTP Commands:
+	- User [username]: used to send the user identification to the server
+	- Pass [password]: used to send the password for the user
+	- LIST		 : used to ask the server to send back the list of all the files in the current folder 
+			( the response of the request is send over the data connection port 20)
+	- RETR [filename]: used to retreive a file 
+			( the response of the request is send over the data connection port 20)
+	- STOR [filename]: used to store file into the current directory of the remote host
+
+
+FTP Replies:
+	- 331 Username OK, password required
+	- 125 Data connection already open, tranfer starting
+	- 425 Can't open data connection
+	- 452 Error writing file
+
+There is a simplified version of FTP - TFTP:
+	- Trivial File Transport Protocol
+	- Uses UDP instead of TCP
+	- Port number: 69
+	- No authentication	
+	- RFC 1350
+
+	- Used in networks not exposed to the public internet (no authentication supproted - no fear of exploit)
+
+
+
+15. E-mail
+==========
+
+W will go over 3 protocols:
+	- SMTP
+	- POP3
+	- IMAP
+	- Web mail
+
+
+SMTP
+----
+Simple Mail Tranfer Protocol is defined in RFC 5321. SMTP tranfer messages from sednders' mail servers to the recipients' mail servers. Uses TCP and have server - client architecture.
+
+Alice agent		Alice's mail		Bob's mail		Bob's agent
+			 server			 server
+
+--------- POP3, IMAP 	---------     SMTP	---------  POP3, IMAP	---------
+|	|  --------->   |	|  --------->   |	|  --------->   |	|
+---------	HTTP	---------		---------	HTTP	---------
+
+
+POP3
+----
+Post Office Protocol V3
+- RFC 1939
+- Extremly simple (and limited in functionality)
+- Port 110
+
+IMAP
+----
+Internet Mail Access Protocol
+- RFC 3501
+- Solves biggest POP3 challanges - remote email server that can be accessed from other devices
+
+HTTP
+----
+Web based - hyper text transfer protocol
+- User agent is a web browser
+- Mail servers still communicate via SMTP
+
+
+
+16. DNS
+=======
+
+Domain Name System (DNS) is a hierarchical and distributed naming system for computers, services and other resources on the internet.
+
+DNS translates human readable domain names (for example, www.udemy.com) to machine readable IP addresses (for example 104.16.66.85).
+
+
+						 Web Client
+						 ---------
+						 |	 |
+						 ---------
+				DNS Request          ^
+				from client	    / \
+				to DNS server	   /   \	HTTP request  with the IP address taken from the DNS server
+   					 	  /     \	from the client
+				DNS responce	 /	 \	to the Web Server
+				to		/ 	  \
+				client	       /	   \	HTTP response with the web page data
+					      v		    v
+					---------	---------
+					|	|	|	|
+					---------	---------
+					DNS Server	Web Server
+
+
+DNS Tools
+- nslookup nasa.gov
+- ping nasa.gov
+
+ipconfig /displaydns - show local dns cache
+ipconfig /flushdns - empty local dns cache
+
+
+17. Remote Access
+=================
+
+Use cases		- support connection in case of incidents that requires interventions
+Telnet and ssh are tools for access devices via termianl 
+
+Telnet				Not secure
+------
+- VTY - Virtual TeletYpe
+- Uses TCP/port 23
+- Client-Server protocol
+- Support authentication but it is transfered in clear text!
+
+
+SSH				Secure
+---
+- SSH - secure Shell
+- Uses TCP/port 22
+- Client-server protocol
+- Encrypted authentication
+- Encrypted data transfer
+
+
+Practical Example
+
+
+
+
+
+
+
+
+
+
+
+
+

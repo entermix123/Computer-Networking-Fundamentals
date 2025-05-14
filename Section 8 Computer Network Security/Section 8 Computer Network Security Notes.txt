@@ -1,0 +1,62 @@
+Content
+
+42. Introduction of Computer Network Security
+43.Types of threats/attacks
+44. Firewalls
+45. IPS vs. IDS
+
+
+
+42. Introduction of Computer Network Security
+=============================================
+HACKING IS AN ACT THAT SEEKS TO COMPROMISE DIGITAL DEVICES, SUCH AS COMPUTERS, SMARTPHONES, OR EVEN ENTIRE NETWORKS.
+- stealing data
+- gaining access - spying
+- reputation damage
+- activism
+
+
+43.Types of threats/attacks
+===========================
+
+PHISHING - Tricking the user into revealing sensitive information, or running malicious code
+
+VIRUSES/MALWARE
+Malware = Malicious software
+ - viruses - slowing down the PC, steal info, damage the system
+ - trojans - capture info
+ - worms - replicate, capture info, slow pc, spying
+
+RANSOMWARE - Attackers demanding ransom for decryption keys.
+
+(D)DOS - (Distributed) Denial of Service - network attack
+	solution - firewalls
+
+INPUT VALIDATION ATTACKS - Deploy strategic networks with compelling e-business needs 
+
+more on the topic - HTTPS://OWASP.ORG/WWW-PROJECT-TOP-TEN/
+
+
+
+
+44. Firewalls
+=============
+Filter traffic to our network.
+
+
+
+45. IPS vs. IDS
+===============
+IDS <=> IPS
+
+Intrusion Detection System can’t prevent attacks;
+Intrusion Prevention can both detect and prevent
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+Content
+
+39. Introduction to Mobile and Wireless Networks
+40. Wi-Fi
+41. Cellular networks
+
+
+
+39. Introduction to Mobile and Wireless Networks
+================================================
+
+WIRELESS NETWORKS ELEMENTS
+--------------------------
+Wireless hosts
+Wireless links
+Base stations
+Network infrastructure
+
+
+WIRELESS LINKS CHALLENGES
+-------------------------
+Decreasing signal strength
+Interference from other sources
+Multipath propagation
+Signal-to-noise ratio
+
+
+
+
+
+
+40. Wi-Fi
+=========
+Wi-Fi is a family of wireless network protocols, based on the IEEE 802.11 family of standards, which are commonly used for local area networking of devices and Internet access.
+
+
+WIFI ELEMENTS
+-------------
+BSS - Basic Service Set
+Access Point (AP)
+SSID - Service Set Identifier
+Wi-Fi jungle
+Beacon frames
+Passive scanning
+Active scanning
+
+
+
+
+41. Cellular networks
+=====================
+
+
+GSM
+---
+GSM (Global System for Mobile communications) is a standard developed by the European Telecommunications Standards Institute to describe the protocols for second generation (2G) digital cellular networks used by mobile devices such as mobile phones and tablets.
+
+
+GPRS
+----
+General Packet Radio Service (GPRS) is a packet oriented mobile data standard on the 2G and 3G cellular communication network's global system for mobile communications.
+
+
+SMS messaging and broadcasting
+"Always on" internet access
+Multimedia messaging service (MMS)
+Push-to-talk over cellular (PoC)
+Internet applications for smart devices through wireless application protocol (WAP)
+Point-to-point (P2P) service: inter networking with the Internet (IP)
+
+
+ALL THE GS
+----------
+
+G1
+• Designed exclusively for voiceonly communication.
+• Almost extinct now.
+
+G2
+• Original 2G systems were also designed for voice, but later extended (2.5G) to support data.
+• SMS and MMS
+
+G3
+• Voice + data, but with higher speed radio access links
+• “Mobile broadband”
+• Video calling
+
+G4
+• Increased speeds
+• Higher quality video calls, gaming, streaming etc.
+
+
+
+
+
+
+
+

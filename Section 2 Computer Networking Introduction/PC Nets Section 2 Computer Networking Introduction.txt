@@ -1,0 +1,131 @@
+Section 2 Computer Networks Introduction
+
+3. What is computer network?
+============================
+Amazon - COMPUTER NETWORK REFERS TO INTERCONNECTED COMPUTING DEVICES THAT CAN EXCHANGE DATA AND SHARE RESOURCES WITH EACH OTHER
+
+
+4. What is internet?
+====================
+The internet is a globally connected network system facilitating worldwide communication and access to data resources through a vast collection of private, public, business, academic and government networks.
+
+
+WHAT ABOUT THE WEB?
+-------------------
+The terms ‘Internet’ and ‘World Wide Web’ are often used interchangeably, but they are not exactly the same thing; the internet refers to the global communication system, including hardware and infrastructure, while the web is one of the services communicated over the internet.
+
+
+INTERNET SERVICES
+-----------------
+Internet = Infrastructure that provides services to applications:
+Email, Instant messaging (Chats), VOIP (voice over IP), WEB Serfing (surfing the public internet), Gaming (Distributed online games)
+
+
+5. What is protocol?
+====================
+A network protocol is an established set of rules that determine how data is transmitted between different devices in a network.
+
+
+POPULAR PROTOCOLS: 
+------------------
+TCP: a popular communication protocol which is used for communicating over a network
+
+HTTP: short for Hyper Text Transfer Protocol, the main protocol for website browsing. Secure version is HTTPS – HTTP Secure
+
+SMTP: Simple mail transport Protocol (SMTP): SMTP is designed to send and distribute outgoing E-Mail.
+
+FTP: File Transfer Protocol (FTP): FTP allows users to transfer files from one machine to another. Types of files may include  rogram files, multimedia files, text files, and documents, etc.
+
+TELNET: he connecting process here is termed as remote login. The system which requests for connection is the local computer, and the system which accepts the connection is the remote computer
+
+
+
+
+6. THE OSI MODEL
+================
+
+OSI - Open System Interconnection describe 7 layers that computer system use to communicate over a network.
+
+
+1. L7	Application Layer	HTTP, FTP, SMTP
+2. L6	Presentation Layer	Encryption/Decryption, Data compression
+3. L5	Session Layer		Delimiting and sychronization of data exchange, Ceckpointing and recovery scheme
+4. L4	Transport Layer		TCP, UDP
+5. L3	Network Layer		Moving data layer packeds (data grams), Internet Protocol - IP
+6. L2	Data Link Layer		Protocols specofoc for the type of connection - Ethernet, PPP (point-to-point protocol), HDLC
+7. L1	Physical Layer		Hardware
+
+
+L1 - L3 - Hardware Layers - We need Link, Interface, Switching or routhing device
+L4	- more software that the hardware layer - the 'heart' of the OSI model
+L5 - L7 - Software Layers
+
+
+The type of piece of informtation that is moved over the network
+
+	Layer			Information
+	-----			-----------
+1. L7	Application Layer	Message
+2. L6	Presentation Layer	Message
+3. L5	Session Layer		Message
+4. L4	Transport Layer		Segment
+5. L3	Network Layer		Packet and datagrams
+6. L2	Data Link Layer		Frame
+7. L1	Physical Layer		Bit
+
+
+
+
+7. OSI Layer - Practical Example
+================================
+
+PCs have 7 layers
+Switch have 2 layers only
+Routher have 3 layers
+
+
+
+8. Other Network Models
+=======================
+
+
+DOD					OSI				TCP/IP
+---					---				------
+--------------------------------------------------------------------------------------------------------------------
+Process Application Layer		Application			Application
+					Presentation
+					Session
+--------------------------------------------------------------------------------------------------------------------
+Host-To-Host Layer			Transport			Transport
+--------------------------------------------------------------------------------------------------------------------
+Internet Layer				Network				Network
+--------------------------------------------------------------------------------------------------------------------
+Network Access Layer			Data Link			Network Interface (Link and Physical)
+					Physical
+--------------------------------------------------------------------------------------------------------------------
+
+DOD - Department Of Defence (USA)
+TCP/IP - Transmission Control Protocol/Internet Protocol
+
+
+
+9. Computer Networks History
+============================
+
+1. The ARPANET in December 1969: UTAH - SRI - UCSB - UCLA (USA)
+2. CYCLADES - French network pioners 1970
+3. Internet - 1990
+
+
+
+
+
+
+
+
+
+
+
+
+
+

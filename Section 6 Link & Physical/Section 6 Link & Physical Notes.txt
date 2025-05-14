@@ -1,0 +1,156 @@
+Content
+
+32. Introduction to the Link/Physical Layer
+33. MAC Address
+34. Switching
+35. ARP (Address Resolution Protocol)
+36. ARP Security
+37. VLANs
+38. Ethernet
+
+
+OSI Model
+	Layer
+	-----
+1. L7	Application Layer	Processes
+2. L6	Presentation Layer	Processes
+3. L5	Session Layer		Processes
+4. L4	Transport Layer		Port Number
+5. L3	Network Layer		IP address		We focus on this layer IPs
+6. L2	Data Link Layer		MAC address		physical address MACs, Ethernet Protocol
+7. L1	Physical Layer	
+
+
+
+32. Introduction to the Link/Physical Layer
+===========================================
+
+LINK LAYER SERVICES
+-------------------
+
+FRAMING
+• Encapsulation of network-layer “packets” into a link-layer “datagram” before transmission
+
+RELIABLE DELIVERY
+• Guarantee for delivery of datagrams across a link without error
+
+LINK ACCESS
+• Specifies rules for transmission of frames
+
+ERROR DETECTION AND CORRECTION
+• In order to ensure delivery, detected errors must be corrected
+
+
+IMPLEMENTATION
+--------------
+For the most part, the link layer is implemented in a network adapter, or NIC ( Network Interface Card ). 
+
+At the heart of the network adapter is the link layer controller, usually a single, special purpose chip that implements many of the link layer services (framing, link access, error detection, and so on). 
+
+Thus, much of a link layer controller’s functionality is implemented in hardware .
+
+
+PHYSCAL LAYER SERVICES
+----------------------
+
+CONNECTION ESTABLISHMENT
+• Physical establishment of a connection between two remote devices.
+
+MODULATION
+• Conversion between the representation of user’s data and the corresponding transmitting signals
+
+CONNECTION TERMINATION
+• Physical termination of a connection between two remote devices.
+
+COMMUNICATION RESOURCE SHARING
+• Flow control
+• Contention resolution (collision avoidance)
+
+
+
+
+
+
+
+33. MAC Address
+===============
+
+A MAC ( Media Access Control ) address is a unique, 12 character alphanumeric attribute that is used to identify individual electronic devices on a network.
+
+34-C9-3B-66-A0-FF
+34:C9:3B:66:A0:FF
+
+
+
+
+34. Switching
+=============
+
+Switching is process to forward packets coming in from one port to a port leading towards the destination.
+
+Router is layer 3 device - working with IP addresses
+Switch is layer 2 addresses - working with MAC addresses
+
+
+
+
+
+
+35. ARP (Address Resolution Protocol)
+=====================================
+
+Address Resolution Protocol (ARP) is a layer 2 protocol used to map MAC addresses to IP addresses . All hosts on a network are located by their IP address, but NICs (network interfaces) do not have IP addresses, they have MAC addresses. ARP is the protocol used to associate the IP address to a MAC address.
+
+
+When message is send for first time from PC1 to PC2, a ARP broadcast request is send to all devices in the local network to locate the destination. The destination device (PC2) saves the sender (PC1) MAC and IP addresses and reply to it to confirm its MAC and IP addresses. Then PC1 saves the PC2 IP and MAC address and from now on the communication is established.
+
+If the destination PC is on another network, the ARP message is sent to the Gateway IP - the router of the local network. Then the router communicates with the external networks to find the MAC and IP of the destination PC.
+
+
+
+
+36. ARP Security
+================
+
+If we are hacker we can send ARP messages to all devices in the network with false information and rout the traffic to our machine. After we have what w=information we need, we can reconfigure the ARP tables with sending the correct ARP messages, leaving no trace of the interaction done.
+
+How to prevent this scenarios? With DAI - Dynamic ARP Inspection - detection for this kind of behaviors and block the ports that do it.
+
+
+
+
+
+
+37. VLANs
+=========
+
+A virtual local area network is a logical subnetwork that groups a collection of devices from different physical LANs.
+
+• Valid VLAN range: 1-4094
+• Communication between VLANs can be established through routers
+• Links that carry multiple VLANs = "trunk" links - links between switches
+• Links that carry single VLANs = "access" links - usually to the end point
+
+
+
+
+
+38. Ethernet
+============
+
+Ethernet is a communication protocol which connects devices on a network over a wired connection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

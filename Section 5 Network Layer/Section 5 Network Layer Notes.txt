@@ -1,0 +1,318 @@
+Content
+
+23. The Network Layer
+24. The IP Address
+25. Subnetting
+Quiz 1: Which IP is valid?
+26. DHCP
+27. The Ping (ICMP)
+28. NAT
+29. IPv6
+30. Routing
+31. Routing Protocol (IGP vs. EGP)
+
+
+
+
+23. The Network Layer
+=====================
+
+Main network layer concerns
+	- IP addresses
+	- Routing
+
+
+
+THE ROUTER
+----------
+
+A router is a networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet.
+
+
+
+
+24. The IP Address
+==================
+
+OSI Model
+	Layer
+	-----
+1. L7	Application Layer	Processes
+2. L6	Presentation Layer	Processes
+3. L5	Session Layer		Processes
+4. L4	Transport Layer		Port Number
+5. L3	Network Layer		IP address		We focus on this layer IPs
+6. L2	Data Link Layer		MAC address		physical address MACs
+7. L1	Physical Layer		
+
+IP - internet protocol is the internet layer - all other protocols on layer 1-3 exist to support the IP. IP address is unique numeric identifier.
+
+
+
+25. Subnetting
+==============
+
+A subnet mask is a 32 bit number created by setting host bits to all 0s and setting network bits to all 1s.
+
+IP address "parts" example:
+
+71 . 205 . 0 . 13
+|           |    |
+   network   host
+
+Network Mask - A subnet mask is a 32 bit number created by setting host bits to all 0s and setting network bits to all 1s.
+
+
+Example 1
+---------
+71 . 205 . 0 . 13 /24
+|           |    |    |
+   network   host mask
+
+01000111 . 11001101 . 00000000 . 00001101 - IP
+1111111 . 11111111 . 11111111 . 00000000 - MASK
+|			     |
+	24 (summed, not binary sum) 
+
+
+Example 2
+---------
+71 . 205 . 0 . 13 /16
+|           |    |    |
+   network   host mask
+
+01000111 . 11001101 . 00000000 . 00001101 - IP
+1111111 . 11111111 . 00000000 . 00000000 - MASK
+|		   |
+	16 (summed, not binary sum) 
+
+
+
+We have 2 reserved addresses in this IP - 71.205.x.x
+
+1. Netwrok ID Address
+1111111 . 11111111 . 00000000 . 00000000 = 71.205.0.0
+
+2. Broadcast IP - PC will use this IP for destination address for the data packets. All network participants will receive this packets from the broadcast IP address.
+
+1111111 . 11111111 . 11111111 . 11111111 = 71.205.255.255
+
+We can have IP that start with 255, but we can't have IP that start with 0 !
+
+
+
+
+Quiz 1: Which IP is valid?
+==========================
+
+Question 1:
+Which of the following IP addresses isn't a valid one?
+1. 150.100.255.255
+2. 200.200.200.200
+3. 5.256.0.18		- invalid IP - 256 is above 255 range
+
+
+Question 2:
+Which of the following IP addresses isn't a valid one?
+1. 0.34.5.189		- invalid IP - IP cannot start with 0
+2. 192.168.1.1		
+3. 1.0.0.0
+
+
+
+
+26. DHCP
+========
+
+The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used in computer networks for automatically  assigning IP addresses and other communication parameters to devices connected to the network.
+
+DHCP uses a client server architecture.
+
+DHCP Server can be just a service and not a physical PC. It can be configured on Routher (usually) or a PC.
+
+
+How a PC is connected to the current network by the DHCP?
+
+1. the PC send DHCP Discover (Broadcast) message
+2. DHCP Server send DHCP Offer (Unicast) to the PC. Contains the PC network IP address (first available from the DHCP pool) and a set of IP parameters. 
+3. The PC send DHCP Request (Broadcast) - the PC acknoledge the offer
+4. DHCP server send DHCP Ack (Unicast) 	- DHCP server confirm the PC network settings
+
+
+
+
+27. The Ping (ICMP)
+===================
+
+The Internet Control Message Protocol (ICMP) is a network layer protocol used by network devices to diagnose network communication issues.
+
+ Ping
+ Traceroute
+ Error reporting
+
+
+TRACEROUTE
+----------
+• ICMP tool used to map the routing path
+• Helps admins find link interruptions and other network issues
+• Windows: “tracert”
+• Linux MAC: “traceroute”
+• Example: “tracert udemy.com”
+
+
+PING
+----
+• The ping utility is a simpler traceroute
+• It sends out pings (also referred to as echo request) and then measures the amount of time it takes the message to reach its destination and return to the source
+
+
+ERROR REPORTING
+---------------
+• Implementation of the protocol to automatically check links and report on issues
+• When traffic is dropped or rejected, it is common for network devices to send out ICMP messages containing details
+
+
+
+
+SECURITY
+--------
+There are multiple ways an attacker can use ICMP to execute DDoS attacks, including the following:
+
+ Ping of death - the hacker sends an IP packet larger than the number of bites allowed by the IP. When the receiver machine reassambles the packet, the size excedes the limit causing a buffer overflow and the receiving machine is frozen or crashes.
+
+ Smurf - the hacker send ICMP packed with spoofed source IP address and the recipient send the wrong address a flood of packets. Working more on legacy/old equipment.
+
+ ICMP flood (ping flood) - the hacker sends many requests to the receiver and cause the denail of the service of any other legitimate users.
+
+
+
+
+
+
+28. NAT
+=======
+
+Network address translation (NAT) is a method of mapping one or multiple private IP addresses to one public IP address.
+
+0.0.0.0 – 255.255.255.255 = 232 = 4,294,967,296 - IPv4 total addresses - NAT is one of the solutions to reduce usage of public IP addresses.
+
+PRIVATE VS. PUBLIC
+------------------
+• 10.0. 0.0 - 10.255. 255.255
+• 172.16. 0.0 - 172.31. 255.255
+• 192.168. 0.0 - 192.168. 255.255
+
+We have public addresses (routers public IP addresses) amd privet addresses (local network IP addresses)
+
+
+
+
+29. IPv6
+========
+
+0.0.0.0 – 255.255.255.255 = 232 = 4,294,967,296 - IPv4 total addresses
+
+128 bits = 232 = 340 trillion trillion trillion - IPv6 total addresses
+
+IPv6 format
+-----------
+
+Rule 1:
+-------
+Omit leading zeros in any group of 4 hexadecimal digits: the rule applies only to leading zeros and no trailing zeros. Even if a group consists of 4 zeros we can only omit the leading 3 - 0000.
+
+Example 1:
+2001:db8:1234::f3a0:22c6:f39c/64 - We have 8 groups by 4 bits. 
+
+- Only the first zero ('0') can be removed for short.
+- :: = 0000:0000
+
+If an IPv6 address contains one or more consecutive groups of zeros, they can be replaced by a double colon (::)
+
+
+2001:0db8:1234::f3a0:22c6:f39c/64
+     |
+
+
+Example 2:
+2001:df8:f2::f11 - short IPv6 address
+
+full IPv6 example 2:
+2001:0df8:00f2:0000:0000:0000:0000:0f11
+
+
+Rule 3:
+------
+Replacement of consecutive zeros can only be applied once, because otherwise, the original IPv6 address cannot be recreated from the shortened representation.
+
+Example:
+2001:8cbe:0000:0000:1fc2:0000:0000:f0b9
+
+2001:8cbe::1fc2:0:0:f0b9 - VALID
+         ||     | | 
+
+2001:8cbe:0:0:1fc2::f0b9 - VALID
+	  | |     ||
+
+2001:8cbe::1fc2::f0b9	- NOT VALID !!!  We cannot have 2 '::' consecutive !
+
+
+
+
+30. Routing
+===========
+
+STATIC - Used for small not scalable newtworks for manual administration - more secure from dynamic routing
+------
+• Relies on manual administrator configuration
+• Un-scalable
+• Prone to errors more so than routing protocols
+• Fixed paths
+• More secure
+
+
+DYNAMIC - used in large scalable networks, consistent security attention needed
+-------
+• Uses routing protocols and algorithms
+• Easier to configure (and scale)
+• Easier to re-configure (or update) when needed
+• Considers different paths at a given moment
+
+
+
+
+
+
+31. Routing Protocol (IGP vs. EGP)
+==================================
+
+AUTONOMOUS SYSTEM
+-----------------
+An autonomous system (AS) is a very large network or group of networks with a single routing policy.
+
+
+ROUTING PROTOCOLS
+-----------------
+
+INTERIOR GATEWAY ROUTING
+• IGP – Interior Gateway Protocol
+• Routing inside the autonomous system (AS)
+• Usually a single routing policy
+• RIP, OSPF, EIGRP + Static routing
+	- Routomg Information Protocol
+	- Open Shortest Path First
+	- Enchanted Interior Gateway Routing Protocol
+
+
+
+EXTERIOR GATEWAY ROUTING
+• EGP – Exterior Gateway Protocol
+• Routing outside of ASs. In other words, routing between autonomous systems
+• BGP
+	- Border Gateway Protocol
+
+
+
+
+
+
